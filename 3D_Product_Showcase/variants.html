@@ -65,7 +65,17 @@
     const color = variantSelect.value;
     const material = modelViewer.model.materials[0];
 
-
+    if (color === 'default') {
+      // Restore stored yellow color
+      if (material.originalColor) {
+        material.pbrMetallicRoughness.setBaseColorFactor(material.originalColor);
+        material.pbrMetallicRoughness.baseColorTexture = null;
+      }
+    } else {
+      // Change to new color
+      material.pbrMetallicRoughness.setBaseColorFactor(color);
+      material.pbrMetallicRoughness.baseColorTexture = null;
+    }
   });
 </script>
 
