@@ -61,7 +61,12 @@
     material.originalColor = [...material.pbrMetallicRoughness.baseColorFactor];
   });
 
+  variantSelect.addEventListener('change', () => {
+    const color = variantSelect.value;
+    const material = modelViewer.model.materials[0];
 
+
+  });
 </script>
 
 </body>
